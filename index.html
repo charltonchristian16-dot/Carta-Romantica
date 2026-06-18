@@ -1,248 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Página Especial</title>
-
+<title>Bem-vinda ao nosso cantinho especial ❤️</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Arial,sans-serif;
-background:#0f172a;
-color:white;
-overflow-x:hidden;
-}
-
-section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:40px;
-text-align:center;
-}
-
-h1{
-font-size:clamp(40px,8vw,70px);
-margin-bottom:20px;
-}
-
-h2{
-font-size:clamp(28px,5vw,40px);
-margin-bottom:20px;
-}
-
-p{
-max-width:800px;
-line-height:1.8;
-font-size:18px;
-}
-
-.btn{
-background:#ec4899;
-color:white;
-padding:15px 35px;
-border:none;
-border-radius:50px;
-font-size:18px;
-cursor:pointer;
-text-decoration:none;
-margin-top:25px;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-.hero{
-background:linear-gradient(135deg,#7c3aed,#ec4899);
-}
-
-.galeria{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
-
-.galeria img{
-width:250px;
-height:250px;
-object-fit:cover;
-border-radius:20px;
-}
-
-.card{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:20px;
-max-width:900px;
-}
-
-#contador{
-font-size:45px;
-font-weight:bold;
-margin-top:20px;
-}
-
-.particula{
-position:fixed;
-color:#ec4899;
-animation:subir linear infinite;
-pointer-events:none;
-}
-
-@keyframes subir{
-from{
-transform:translateY(100vh);
-opacity:1;
-}
-to{
-transform:translateY(-100px);
-opacity:0;
-}
-}
-
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(180deg,#fff0f3,#ffe5ec);overflow-x:hidden}
+.tela-inicial{position:fixed;inset:0;background:linear-gradient(135deg,#ffccd5,#ffe5ec);display:flex;justify-content:center;align-items:center;z-index:9999;transition:1s}
+.envelope{position:relative;width:320px;height:220px;cursor:pointer}
+.corpo{position:absolute;bottom:0;width:100%;height:160px;background:#ff758f}
+.tampa{position:absolute;top:0;border-left:160px solid transparent;border-right:160px solid transparent;border-top:110px solid #ff4d6d;transform-origin:top;transition:1s}
+.carta{position:absolute;left:20px;right:20px;bottom:20px;height:120px;background:#fff;border-radius:10px;padding:20px;transition:1s;text-align:center}
+.envelope.aberto .tampa{transform:rotateX(180deg)}
+.envelope.aberto .carta{transform:translateY(-120px)}
+section{min-height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;text-align:center}
+.hero{background:url('capa.jpg') center/cover;color:#fff;position:relative}
+.hero:before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.hero>*{position:relative;z-index:1}
+h1{font-size:clamp(38px,8vw,70px)}
+h2{color:#c9184a;margin-bottom:15px}
+.card{background:#fff;max-width:900px;width:100%;padding:30px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+p{line-height:1.9;font-size:18px}.btn{background:#c9184a;color:#fff;padding:15px 30px;border-radius:40px;text-decoration:none;margin-top:20px;display:inline-block}
+.galeria{display:flex;flex-wrap:wrap;justify-content:center;gap:15px}.galeria img{width:250px;height:250px;object-fit:cover;border-radius:20px}
+#contador{font-size:36px;color:#c9184a;font-weight:bold}.heart{position:fixed;color:#ff4d6d;pointer-events:none;animation:up 10s linear infinite}@keyframes up{from{transform:translateY(100vh)}to{transform:translateY(-100px)}}
 </style>
 </head>
-
 <body>
-
-<section class="hero">
-
-<h1>[TÍTULO PRINCIPAL]</h1>
-
-<p>
-[SUBTÍTULO]
-</p>
-
-<a href="#pagina2" class="btn">
-Abrir
-</a>
-
+<div id='telaInicial' class='tela-inicial'><div class='envelope' onclick='abrirCarta()'><div class='tampa'></div><div class='corpo'></div><div class='carta'><h3>Uma mensagem especial</h3><p>Toque para abrir ❤️</p></div></div></div>
+<section class='hero'>
+<h1>Bem-vinda ao nosso cantinho especial ❤️</h1>
+<p>Uma pequena jornada construída através de momentos especiais.</p>
+#historiaAbrir ✨</a>
 </section>
-
-<section id="pagina2">
-
-<div class="card">
-
-<h2>[SEÇÃO 1]</h2>
-
-<p>
-[SEU TEXTO]
-</p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card">
-
-<h2>[GALERIA]</h2>
-
-<div class="galeria">
-
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
-<img src="foto4.jpg">
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card">
-
-<h2>[CONTADOR]</h2>
-
-<div id="contador"></div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card">
-
-<h2>[ÁUDIO]</h2>
-
-<audio id="musica" controls>
-<source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="card">
-
-<h2>[MENSAGEM FINAL]</h2>
-
-<p>
-[SEU TEXTO FINAL]
-</p>
-
-</div>
-
-</section>
-
+<section id='historia'><div class='card'><h2>Era uma vez eu e você, e agora nós ❤️</h2><p>Esse é um pequeno momento que você pode olhar com olhos de alguém que viveu tanta coisa. E nessas tantas coisas viveram muitos sorrisos. E nesses sorrisos existiu muito amor.</p></div></section>
+<section><div class='card'><h2>Nossos Momentos 📸</h2><div class='galeria'><img src='foto1.jpg'><img src='foto2.jpg'><img src='foto3.jpg'><img src='foto4.jpg'></div></div></section>
+<section><div class='card'><h2>Nossa Jornada ⏳</h2><div id='contador'></div></div></section>
+<section><div class='card'><h2>Nossa Música 🎵</h2><audio controls><source src='musica.mp3' type='audio/mpeg'></audio></div></section>
+<section><div class='card'><h2>Uma Reflexão Final ✨</h2><p>Sou feliz por saber que, em meio à imensidão do universo, nossos caminhos se encontraram exatamente neste pequeno instante da eternidade.</p></div></section>
 <script>
-
-const dataInicial = new Date("2024-01-01");
-
-function atualizar(){
-
-const hoje = new Date();
-
-const dias = Math.floor(
-(hoje - dataInicial) /
-(1000*60*60*24)
-);
-
-document.getElementById("contador").innerHTML =
-dias + " dias";
-
-}
-
-atualizar();
-
-for(let i=0;i<30;i++){
-
-const p=document.createElement("div");
-
-p.innerHTML="❤️";
-
-p.classList.add("particula");
-
-p.style.left=Math.random()*100+"vw";
-p.style.fontSize=(15+Math.random()*25)+"px";
-p.style.animationDuration=(10+Math.random()*10)+"s";
-
-document.body.appendChild(p);
-
-}
-
+function abrirCarta(){const e=document.querySelector('.envelope');e.classList.add('aberto');setTimeout(()=>{document.getElementById('telaInicial').style.opacity='0';setTimeout(()=>{document.getElementById('telaInicial').style.display='none'},1000)},1500)}
+const dataInicial=new Date('2025-09-19T20:00:00');
+function atualizar(){const agora=new Date();const d=Math.floor((agora-dataInicial)/86400000);document.getElementById('contador').innerHTML=d+' dias';}
+setInterval(atualizar,1000);atualizar();
+for(let i=0;i<30;i++){let h=document.createElement('div');h.className='heart';h.innerHTML='❤️';h.style.left=Math.random()*100+'vw';h.style.animationDuration=(8+Math.random()*10)+'s';document.body.appendChild(h)}
 </script>
-
 </body>
 </html>
-``
