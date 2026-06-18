@@ -2,16 +2,26 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Minha Princesa ❤️</title>
+<title>Para Minha Princesa, minha Libny ❤️</title>
 
 <style>
 
-body{
+html{
+    scroll-behavior:smooth;
+}
+
+*{
     margin:0;
-    font-family:'Segoe UI', Arial, sans-serif;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
     background:#fff0f3;
     color:#4a2c32;
     text-align:center;
@@ -19,61 +29,90 @@ body{
 
 header{
     padding:60px 20px;
-    background:linear-gradient(#ffccd5,#fff);
+    background:linear-gradient(180deg,#ffccd5,#fff);
+}
+
+.coracao{
+    font-size:55px;
+    animation:bater 1s infinite;
+}
+
+@keyframes bater{
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+.capa{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-top:20px;
+    border:6px solid white;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-h2{
+    margin-top:25px;
+    font-size:clamp(32px,8vw,48px);
     color:#c9184a;
 }
 
-p{
+.subtitulo{
+    margin-top:15px;
     font-size:18px;
-    line-height:1.8;
 }
 
 .card{
     background:white;
-    margin:25px auto;
+    max-width:900px;
+    margin:20px auto;
     padding:25px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    max-width:900px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#c9184a;
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.8;
+    font-size:17px;
 }
 
 .galeria{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
+    gap:15px;
 }
 
 .galeria img{
-    width:280px;
-    height:280px;
-    object-fit:cover;
-    margin:10px;
+    width:100%;
+    max-width:260px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    object-fit:cover;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
 .botao{
     background:#c9184a;
     color:white;
+    border:none;
     padding:15px 30px;
     border-radius:30px;
-    text-decoration:none;
-    display:inline-block;
-    margin:20px;
-    transition:0.3s;
+    font-size:18px;
+    cursor:pointer;
+    margin-top:15px;
+    transition:.3s;
 }
 
 .botao:hover{
-    background:#a4133c;
     transform:scale(1.05);
+    background:#a4133c;
 }
 
 footer{
@@ -81,15 +120,27 @@ footer{
     font-size:18px;
 }
 
-.coracao{
-    font-size:50px;
-    animation:bater 1s infinite;
+.frase{
+    font-style:italic;
+    color:#c9184a;
+    font-size:20px;
 }
 
-@keyframes bater{
-    50%{
-        transform:scale(1.2);
-    }
+@media(max-width:768px){
+
+.card{
+    margin:15px;
+}
+
+.capa{
+    width:180px;
+    height:180px;
+}
+
+p{
+    font-size:16px;
+}
+
 }
 
 </style>
@@ -100,40 +151,56 @@ footer{
 
 <header>
 
-<div class="coracao">❤️</div>
+<div class="coracao">
+❤️
+</div>
+
+<img src="capa.jpg" class="capa">
 
 <h1>Minha Princesa</h1>
 
-<p>
-Um lugar feito especialmente para você.
+<p class="subtitulo">
+Um pequeno lugar feito especialmente para você ❤️
 </p>
 
 </header>
+
 
 <div class="card">
 
 <h2>Sobre Você</h2>
 
 <p>
-Eu amo os detalhes que fazem você ser você.
-Seu jeito, suas manias, seu sorriso, as coisas que você gosta
-e até mesmo aquelas pequenas coisas que talvez você nem perceba,
-mas que eu observo todos os dias.
+
+Eu amo os detalhes que fazem você ser quem é.
+
+Seu sorriso, seu jeito de falar, suas manias,
+sua dedicação e até aquelas pequenas coisas
+que talvez você nem imagine que eu percebo.
+
+São justamente esses detalhes que tornam você única.
+
 </p>
 
 </div>
+
 
 <div class="card">
 
 <h2>Nossa História ❤️</h2>
 
 <p>
-Nossa história é feita de momentos especiais.
-De risadas, aprendizados, conquistas e também desafios.
-E cada um desses momentos ajudou a construir tudo o que temos hoje.
+
+Nossa história é feita de momentos.
+Momentos felizes, desafiadores, engraçados e especiais.
+
+Cada passo nos trouxe até aqui e ajudou a construir
+a família linda que temos hoje.
+
 </p>
 
 </div>
+
 
 <div class="card">
 
@@ -141,64 +208,112 @@ E cada um desses momentos ajudou a construir tudo o que temos hoje.
 
 <div class="galeria">
 
-<img src="foto1.jpg" alt="Foto 1">
-<img src="foto2.jpg" alt="Foto 2">
-<img src="foto3.jpg" alt="Foto 3">
-<img src="foto4.jpg" alt="Foto 4">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
 
 </div>
 
 </div>
+
 
 <div class="card">
 
 <h2>Você e a Laura 👩‍👧</h2>
 
 <p>
-Ver você sendo mãe é uma das coisas mais bonitas que eu poderia presenciar.
-Seu carinho, sua dedicação e sua força fazem toda a diferença.
+
+Ver você como mãe é algo incrível.
+
+Seu carinho, sua dedicação e a forma como você cuida
+da Laura mostram diariamente a mulher maravilhosa que você é.
+
 </p>
 
 </div>
+
 
 <div class="card">
 
 <h2>Uma Pequena Carta 🌹</h2>
 
 <p>
+
 A vida é feita de momentos, escolhas e aprendizados.
-Quero que você saiba que valorizo quem você é,
-a mulher que caminha ao meu lado e a família que construímos.
 
-Mais do que promessas, quero que este espaço represente carinho,
-respeito, admiração e gratidão.
+Quero que você saiba que eu admiro a mulher que você é.
 
-Obrigado por ser você.
+Este pequeno espaço foi feito apenas para lembrar o quanto você é especial.
+
+Não é sobre grandes promessas.
+
+É sobre carinho.
+Sobre respeito.
+Sobre admiração.
+
+E sobre agradecer por tudo que construímos.
+
 </p>
 
 </div>
+
 
 <div class="card">
 
-<h2>Detalhes Que Eu Amo Em Você</h2>
+<h2>O Que Eu Amo Em Você ❤️</h2>
 
 <p>
+
 ☕ Seu jeito pela manhã<br><br>
+
 😊 Sua risada<br><br>
-❤️ O amor que dedica à nossa família<br><br>
+
+❤️ O amor pela nossa família<br><br>
+
 🌹 Sua força e determinação<br><br>
-✨ Cada detalhe que faz você ser única
+
+✨ Sua forma única de ser
+
 </p>
 
 </div>
 
-<a class="botao" href="#">
-Ouvir Nossa Música ❤️
-</a>
+
+<div class="card">
+
+<h2>Nossa Música 🎵</h2>
+
+<p>
+Clique no botão abaixo.
+</p>
+
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button class="botao"
+onclick="document.getElementById('musica').play()">
+🎵 Ouvir Nossa Música
+</button>
+
+</div>
+
+
+<div class="card">
+
+<p class="frase">
+
+"Você é uma das melhores partes da minha história."
+
+</p>
+
+</div>
+
 
 <footer>
 
-Feito com carinho 🌹
+❤️ Feito com carinho ❤️
 
 </footer>
 
