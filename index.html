@@ -1,50 +1,810 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+ 
 <head>
+ 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bem-vinda ao nosso cantinho especial ❤️</title>
+ 
+<title>Nosso Cantinho ❤️</title>
+ 
+ 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:'Segoe UI',sans-serif;background:linear-gradient(180deg,#fff0f3,#ffe5ec);overflow-x:hidden}
-.tela-inicial{position:fixed;inset:0;background:linear-gradient(135deg,#ffccd5,#ffe5ec);display:flex;justify-content:center;align-items:center;z-index:9999;transition:1s}
-.envelope{position:relative;width:320px;height:220px;cursor:pointer}
-.corpo{position:absolute;bottom:0;width:100%;height:160px;background:#ff758f}
-.tampa{position:absolute;top:0;border-left:160px solid transparent;border-right:160px solid transparent;border-top:110px solid #ff4d6d;transform-origin:top;transition:1s}
-.carta{position:absolute;left:20px;right:20px;bottom:20px;height:120px;background:#fff;border-radius:10px;padding:20px;transition:1s;text-align:center}
-.envelope.aberto .tampa{transform:rotateX(180deg)}
-.envelope.aberto .carta{transform:translateY(-120px)}
-section{min-height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:30px;text-align:center}
-.hero{background:url('capa.jpg') center/cover;color:#fff;position:relative}
-.hero:before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.hero>*{position:relative;z-index:1}
-h1{font-size:clamp(38px,8vw,70px)}
-h2{color:#c9184a;margin-bottom:15px}
-.card{background:#fff;max-width:900px;width:100%;padding:30px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
-p{line-height:1.9;font-size:18px}.btn{background:#c9184a;color:#fff;padding:15px 30px;border-radius:40px;text-decoration:none;margin-top:20px;display:inline-block}
-.galeria{display:flex;flex-wrap:wrap;justify-content:center;gap:15px}.galeria img{width:250px;height:250px;object-fit:cover;border-radius:20px}
-#contador{font-size:36px;color:#c9184a;font-weight:bold}.heart{position:fixed;color:#ff4d6d;pointer-events:none;animation:up 10s linear infinite}@keyframes up{from{transform:translateY(100vh)}to{transform:translateY(-100px)}}
+ 
+ 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+ 
+ 
+body{
+ 
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(#fff0f3,#ffe5ec);
+color:#4a2c32;
+overflow-x:hidden;
+ 
+}
+ 
+ 
+ 
+.tela-inicial{
+ 
+position:fixed;
+inset:0;
+background:linear-gradient(135deg,#ffccd5,#fff0f3);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:1s;
+ 
+}
+ 
+ 
+ 
+ 
+.envelope{
+ 
+width:320px;
+height:220px;
+position:relative;
+cursor:pointer;
+ 
+}
+ 
+ 
+ 
+.corpo{
+ 
+position:absolute;
+bottom:0;
+width:100%;
+height:150px;
+background:#ff758f;
+border-radius:0 0 15px 15px;
+ 
+}
+ 
+ 
+ 
+.tampa{
+ 
+position:absolute;
+top:0;
+ 
+border-left:160px solid transparent;
+border-right:160px solid transparent;
+border-top:110px solid #ff4d6d;
+ 
+transform-origin:top;
+transition:1s;
+ 
+}
+ 
+ 
+ 
+.carta{
+ 
+position:absolute;
+background:white;
+left:20px;
+right:20px;
+bottom:20px;
+height:120px;
+padding:20px;
+border-radius:15px;
+transition:1s;
+ 
+box-shadow:0 5px 20px #0002;
+ 
+}
+ 
+ 
+ 
+.envelope.aberto .tampa{
+ 
+transform:rotateX(180deg);
+ 
+}
+ 
+ 
+ 
+.envelope.aberto .carta{
+ 
+transform:translateY(-120px);
+ 
+}
+ 
+ 
+ 
+section{
+ 
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:30px;
+ 
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+ 
+}
+ 
+ 
+ 
+section.mostrar{
+ 
+opacity:1;
+transform:translateY(0);
+ 
+}
+ 
+ 
+ 
+ 
+.hero{
+ 
+background:url('capa.jpg') center/cover;
+color:white;
+position:relative;
+text-align:center;
+ 
+}
+ 
+ 
+ 
+.hero:before{
+ 
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+ 
+}
+ 
+ 
+ 
+.hero div{
+ 
+position:relative;
+ 
+}
+ 
+ 
+ 
+h1{
+ 
+font-size:clamp(35px,8vw,70px);
+ 
+}
+ 
+ 
+ 
+h2{
+ 
+color:#c9184a;
+margin-bottom:20px;
+ 
+}
+ 
+ 
+ 
+ 
+p{
+ 
+font-size:18px;
+line-height:1.8;
+ 
+}
+ 
+ 
+ 
+ 
+.card{
+ 
+background:white;
+max-width:900px;
+width:100%;
+padding:35px;
+border-radius:30px;
+ 
+box-shadow:
+0 10px 30px rgba(0,0,0,.12);
+ 
+text-align:center;
+ 
+}
+ 
+ 
+ 
+ 
+.btn{
+ 
+background:#c9184a;
+color:white;
+padding:15px 35px;
+ 
+border-radius:40px;
+text-decoration:none;
+display:inline-block;
+margin-top:25px;
+ 
+transition:.3s;
+ 
+}
+ 
+ 
+ 
+.btn:hover{
+ 
+transform:scale(1.05);
+ 
+}
+ 
+ 
+ 
+ 
+ 
+.galeria{
+ 
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+ 
+}
+ 
+ 
+ 
+.galeria img{
+ 
+width:250px;
+height:250px;
+ 
+object-fit:cover;
+ 
+border-radius:25px;
+ 
+transition:.5s;
+ 
+}
+ 
+ 
+ 
+.galeria img:hover{
+ 
+transform:scale(1.05);
+ 
+}
+ 
+ 
+ 
+ 
+#contador{
+ 
+font-size:40px;
+font-weight:bold;
+color:#c9184a;
+ 
+}
+ 
+ 
+ 
+ 
+ 
+.motivos{
+ 
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+ 
+}
+ 
+ 
+ 
+.motivo{
+ 
+background:#ffe5ec;
+padding:20px;
+border-radius:20px;
+ 
+transition:.4s;
+ 
+}
+ 
+ 
+ 
+.motivo:hover{
+ 
+transform:translateY(-5px);
+ 
+}
+ 
+ 
+ 
+ 
+.heart{
+ 
+position:fixed;
+color:#ff4d6d;
+animation:subir linear infinite;
+pointer-events:none;
+ 
+}
+ 
+ 
+ 
+@keyframes subir{
+ 
+ 
+from{
+ 
+transform:translateY(100vh);
+opacity:1;
+ 
+}
+ 
+ 
+to{
+ 
+transform:translateY(-100px);
+opacity:0;
+ 
+}
+ 
+ 
+}
+ 
+ 
+ 
+footer{
+ 
+padding:40px;
+text-align:center;
+ 
+}
+ 
+ 
 </style>
+ 
+ 
 </head>
+ 
+ 
 <body>
-<div id='telaInicial' class='tela-inicial'><div class='envelope' onclick='abrirCarta()'><div class='tampa'></div><div class='corpo'></div><div class='carta'><h3>Uma mensagem especial</h3><p>Toque para abrir ❤️</p></div></div></div>
-<section class='hero'>
-<h1>Bem-vinda ao nosso cantinho especial ❤️</h1>
-<p>Uma pequena jornada construída através de momentos especiais.</p>
-#historiaAbrir ✨</a>
+ 
+ 
+ 
+<div id="inicio" class="tela-inicial">
+ 
+ 
+<div class="envelope" onclick="abrirCarta()">
+ 
+ 
+<div class="tampa"></div>
+ 
+<div class="corpo"></div>
+ 
+ 
+<div class="carta">
+ 
+<h3>Para você ❤️</h3>
+ 
+<p>
+Toque para abrir
+</p>
+ 
+</div>
+ 
+ 
+</div>
+ 
+</div>
+ 
+ 
+ 
+ 
+ 
+<section class="hero">
+ 
+ 
+<div>
+ 
+<h1>Nosso Cantinho ❤️</h1>
+ 
+ 
+<p>
+ 
+Uma pequena história feita de momentos,
+sorrisos e uma família linda.
+ 
+</p>
+ 
+ 
+<a class="btn" href="#historia">
+ 
+Nossa história ✨
+ 
+</a>
+ 
+ 
+</div>
+ 
+ 
 </section>
-<section id='historia'><div class='card'><h2>Era uma vez eu e você, e agora nós ❤️</h2><p>Esse é um pequeno momento que você pode olhar com olhos de alguém que viveu tanta coisa. E nessas tantas coisas viveram muitos sorrisos. E nesses sorrisos existiu muito amor.</p></div></section>
-<section><div class='card'><h2>Nossos Momentos 📸</h2><div class='galeria'><img src='foto1.jpg'><img src='foto2.jpg'><img src='foto3.jpg'><img src='foto4.jpg'></div></div></section>
-<section><div class='card'><h2>Nossa Jornada ⏳</h2><div id='contador'></div></div></section>
-<section><div class='card'><h2>Nossa Música 🎵</h2><audio controls><source src='musica.mp3' type='audio/mpeg'></audio></div></section>
-<section><div class='card'><h2>Uma Reflexão Final ✨</h2><p>Sou feliz por saber que, em meio à imensidão do universo, nossos caminhos se encontraram exatamente neste pequeno instante da eternidade.</p></div></section>
+ 
+ 
+ 
+ 
+ 
+<section id="historia">
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>Era uma vez eu e você ❤️</h2>
+ 
+ 
+<p>
+ 
+Nossa história foi construída em pequenos momentos.
+ 
+Conversas, risadas, desafios e lembranças
+que fazem parte de quem somos.
+ 
+</p>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+<section>
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>Os detalhes que fazem você ser você 🌹</h2>
+ 
+ 
+<p>
+ 
+Eu amo os pequenos detalhes.
+ 
+Seu jeito, suas manias,
+as coisas que você gosta,
+seu sorriso,
+as coisas que fazem você ser única.
+ 
+Talvez pareçam detalhes simples,
+mas são justamente eles que fazem você ser especial.
+ 
+</p>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<section>
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>Nossos momentos 📸</h2>
+ 
+ 
+<div class="galeria">
+ 
+ 
+<img src="foto1.jpg">
+ 
+<img src="foto2.jpg">
+ 
+<img src="foto3.jpg">
+ 
+<img src="foto4.jpg">
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<section>
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>Nossa Jornada ⏳</h2>
+ 
+ 
+<div id="contador"></div>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<section>
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>Nossa Música 🎵</h2>
+ 
+ 
+<audio controls>
+ 
+<source src="musica.mp3">
+ 
+</audio>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<section>
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>100 motivos ❤️</h2>
+ 
+ 
+<div class="motivos">
+ 
+ 
+<div class="motivo">
+Seu sorriso
+</div>
+ 
+ 
+<div class="motivo">
+Seu jeito
+</div>
+ 
+ 
+<div class="motivo">
+Sua força
+</div>
+ 
+ 
+<div class="motivo">
+A mãe que você é
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<section>
+ 
+ 
+<div class="card">
+ 
+ 
+<h2>Uma carta para você 🌹</h2>
+ 
+ 
+<p>
+ 
+ 
+Eu não quero que esse espaço seja apenas sobre lembrar momentos.
+ 
+Quero que seja sobre lembrar quem você é.
+ 
+A mulher que conheci,
+a mãe da nossa filha,
+a pessoa que faz parte da minha história.
+ 
+Obrigado por cada sorriso,
+cada momento e cada detalhe.
+ 
+Você é importante para mim.
+ 
+ 
+</p>
+ 
+ 
+</div>
+ 
+ 
+</section>
+ 
+ 
+ 
+ 
+ 
+<footer>
+ 
+Feito com carinho ❤️
+ 
+</footer>
+ 
+ 
+ 
+ 
+ 
 <script>
-function abrirCarta(){const e=document.querySelector('.envelope');e.classList.add('aberto');setTimeout(()=>{document.getElementById('telaInicial').style.opacity='0';setTimeout(()=>{document.getElementById('telaInicial').style.display='none'},1000)},1500)}
-const dataInicial=new Date('2025-09-19T20:00:00');
-function atualizar(){const agora=new Date();const d=Math.floor((agora-dataInicial)/86400000);document.getElementById('contador').innerHTML=d+' dias';}
-setInterval(atualizar,1000);atualizar();
-for(let i=0;i<30;i++){let h=document.createElement('div');h.className='heart';h.innerHTML='❤️';h.style.left=Math.random()*100+'vw';h.style.animationDuration=(8+Math.random()*10)+'s';document.body.appendChild(h)}
+ 
+ 
+function abrirCarta(){
+ 
+ 
+let e=document.querySelector('.envelope');
+ 
+e.classList.add('aberto');
+ 
+ 
+setTimeout(()=>{
+ 
+document.getElementById('inicio').style.opacity='0';
+ 
+ 
+setTimeout(()=>{
+ 
+document.getElementById('inicio').style.display='none';
+ 
+},1000);
+ 
+ 
+},1500);
+ 
+ 
+}
+ 
+ 
+ 
+ 
+const inicio=new Date('2025-09-19T20:00:00');
+ 
+ 
+function atualizar(){
+ 
+ 
+let agora=new Date();
+ 
+ 
+let dias=Math.floor((agora-inicio)/86400000);
+ 
+ 
+document.getElementById('contador').innerHTML=
+dias+" dias juntos ❤️";
+ 
+ 
+}
+ 
+ 
+setInterval(atualizar,1000);
+ 
+atualizar();
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+for(let i=0;i<40;i++){
+ 
+ 
+let h=document.createElement('div');
+ 
+ 
+h.className="heart";
+ 
+h.innerHTML="❤️";
+ 
+ 
+h.style.left=Math.random()*100+"vw";
+ 
+ 
+h.style.animationDuration=
+(6+Math.random()*10)+"s";
+ 
+ 
+document.body.appendChild(h);
+ 
+ 
+}
+ 
+ 
+ 
+ 
+ 
+ 
+const secoes=document.querySelectorAll("section");
+ 
+ 
+window.addEventListener("scroll",()=>{
+ 
+ 
+secoes.forEach(s=>{
+ 
+ 
+let topo=s.getBoundingClientRect().top;
+ 
+ 
+if(topo<window.innerHeight-100){
+ 
+s.classList.add("mostrar");
+ 
+}
+ 
+ 
+});
+ 
+ 
+});
+ 
+ 
+ 
 </script>
+ 
+ 
+ 
 </body>
+ 
+ 
 </html>
